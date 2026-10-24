@@ -51,10 +51,10 @@ export function AnalyticsPage() {
           {metrics.data && selected && (
             <>
               <div className="stat-grid stat-grid-four">
-                <StatCard label="Latest CPU" value={latest ? `${latest.cpu_pct.toFixed(1)}%` : '—'} caption="Recent measurement" icon="cpu" tone="blue" />
-                <StatCard label="Latest memory" value={latest ? `${latest.memory_pct.toFixed(1)}%` : '—'} caption="Recent measurement" icon="analytics" tone="violet" />
-                <StatCard label="Latest disk" value={latest ? `${latest.disk_pct.toFixed(1)}%` : '—'} caption="Recent measurement" icon="inventory" tone="amber" />
-                <StatCard label="Network in / out" value={latest ? `${latest.network_in_mb.toFixed(1)} / ${latest.network_out_mb.toFixed(1)} MB` : '—'} caption="Latest reading" icon="cloud" tone="green" />
+                <StatCard label="Latest CPU" value={latest ? `${latest.cpu_pct.toFixed(1)}%` : 'Unavailable'} caption="Recent measurement" icon="cpu" tone="blue" />
+                <StatCard label="Latest memory" value={latest ? `${latest.memory_pct.toFixed(1)}%` : 'Unavailable'} caption="Recent measurement" icon="analytics" tone="violet" />
+                <StatCard label="Latest disk" value={latest ? `${latest.disk_pct.toFixed(1)}%` : 'Unavailable'} caption="Recent measurement" icon="inventory" tone="amber" />
+                <StatCard label="Network in / out" value={latest ? `${latest.network_in_mb.toFixed(1)} / ${latest.network_out_mb.toFixed(1)} MB` : 'Unavailable'} caption="Latest reading" icon="cloud" tone="green" />
               </div>
               <Panel title="Utilization history" subtitle="Recent CPU, memory, and disk usage returned by the metrics API" action={<Tag>{metrics.data.history.length} readings</Tag>}>
                 {metrics.data.history.length ? <MetricChart data={metrics.data.history} /> : <EmptyState title="No metrics found" message="The selected resource does not yet have utilization history." icon="analytics" />}
@@ -70,7 +70,7 @@ export function AnalyticsPage() {
                   <div className="assumption-note compact-note"><Icon name="assistant" size={15} /><span>Use p95/p99 values to sanity-check resizing recommendations against peak load.</span></div>
                 </Panel>
                 <Panel title="Anomalies" subtitle="High-utilization events for this resource">
-                  {metrics.data.anomalies.length ? <div className="anomaly-list">{metrics.data.anomalies.map((item, index) => <div className="anomaly-row" key={`${item.timestamp}-${index}`}><span className="anomaly-point" /><div><strong>{item.cpu_pct}% CPU · {item.memory_pct}% memory</strong><span>{formatDate(item.timestamp)}</span></div><Tag tone="danger">Anomaly</Tag></div>)}</div> : <EmptyState title="No anomalies detected" message="No unusual utilization events are recorded for this resource." icon="check" />}
+                  {metrics.data.anomalies.length ? <div className="anomaly-list">{metrics.data.anomalies.map((item, index) => <div className="anomaly-row" key={`${item.timestamp}-${index}`}><span className="anomaly-point" /><div><strong>{item.cpu_pct}% CPU · {item.memory_pct}% memory</strong><span>{formatDate(item.timestamp)}</span></div><Tag tone="danger">Anomaly</Tag></div>)}</div> : <EmptyState title="No anomalies detected" message="No unusual utilization events are recorded for this resource." icon="overview" />}
                 </Panel>
               </div>
             </>

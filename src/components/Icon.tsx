@@ -20,7 +20,6 @@ const paths: Record<string, ReactNode> = {
   building: <><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 21v-3h4v3" /></>,
   chevron: <path d="m9 18 6-6-6-6" />,
   close: <path d="m18 6-12 12M6 6l12 12" />,
-  check: <path d="m5 12 4 4L19 6" />,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
   cpu: <><rect x="5" y="5" width="14" height="14" rx="2" /><path d="M9 9h6v6H9zM9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4" /></>,
   cloud: <path d="M20 16.2A4.5 4.5 0 0 0 18 7.5h-1.2A6 6 0 1 0 5 15.6" />,

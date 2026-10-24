@@ -37,7 +37,7 @@ export function AiExplainPage() {
 
   return (
     <>
-      <PageHeader eyebrow="PLAIN-LANGUAGE INSIGHTS" title="AI explain" description="Turn resource metrics into a concise explanation you can review with your team. The response is guidance—not an automatic change." />
+      <PageHeader eyebrow="PLAIN-LANGUAGE INSIGHTS" title="AI explain" description="Turn resource metrics into a concise explanation your team can review. Recommendations never apply changes automatically." />
       <div className="explain-layout">
         <Panel title="Explain a resource" subtitle="Share the resource identifier and the utilization context">
           <form className="form-stack" onSubmit={(event) => void explain(event)}>

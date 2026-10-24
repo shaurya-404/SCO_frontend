@@ -84,7 +84,7 @@ export function InventoryPage() {
             <div className="drawer-tags"><Tag tone="violet">{detailResource?.type}</Tag><Tag>{detailResource?.region}</Tag><Tag tone="blue">{detailResource?.environment}</Tag></div>
             <div className="detail-grid">
               <div><span>Owner</span><strong>{detailResource?.owner}</strong></div><div><span>Monthly cost</span><strong>{detailResource && formatCurrency(detailResource.monthly_cost)}</strong></div>
-              <div><span>Compute</span><strong>{detailResource?.vcpu ? `${detailResource.vcpu} vCPU` : '—'}</strong></div><div><span>Memory</span><strong>{detailResource?.ram_gb ? `${detailResource.ram_gb} GB` : '—'}</strong></div>
+              <div><span>Compute</span><strong>{detailResource?.vcpu ? `${detailResource.vcpu} vCPU` : 'Unavailable'}</strong></div><div><span>Memory</span><strong>{detailResource?.ram_gb ? `${detailResource.ram_gb} GB` : 'Unavailable'}</strong></div>
               <div><span>Disk</span><strong>{detailResource?.disk_size_gb} GB</strong></div><div><span>Created</span><strong>{detailResource && formatDate(detailResource.creation_date)}</strong></div>
             </div>
             <Panel title="Utilization history" subtitle="Recent CPU, memory, and disk readings">

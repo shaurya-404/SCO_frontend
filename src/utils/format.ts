@@ -15,7 +15,7 @@ export function formatDate(value: string) {
 }
 
 export function formatPercentile(value: number | null | undefined) {
-  return typeof value === 'number' && Number.isFinite(value) ? `${value.toFixed(1)}%` : '—'
+  return typeof value === 'number' && Number.isFinite(value) ? `${value.toFixed(1)}%` : 'Unavailable'
 }
 
 export function riskTone(value: string) {

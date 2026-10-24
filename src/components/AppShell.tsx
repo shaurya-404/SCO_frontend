@@ -101,7 +101,6 @@ export function AppShell({ user, path, navigate, onLogout, onToggleTheme, dark, 
         <header className="topbar">
           <div className="breadcrumb"><span>Workspace</span><Icon name="chevron" size={13} /><strong>{activePath === '/profile' ? 'Profile' : navigation.flatMap((group) => group.items).find((item) => item.path === activePath)?.label ?? 'Overview'}</strong></div>
           <div className="topbar-actions">
-            <span className="connection-status"><span /> API connected</span>
             <button type="button" className="icon-button theme-button" onClick={onToggleTheme} aria-label={`Switch to ${dark ? 'light' : 'dark'} mode`} title={`Switch to ${dark ? 'light' : 'dark'} mode`}><Icon name={dark ? 'sun' : 'moon'} size={17} /></button>
             <span className="topbar-date">{new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium' }).format(new Date())}</span>
           </div>

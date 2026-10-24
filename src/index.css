@@ -1,80 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg: #f7f8fb;
+  color-scheme: light;
+  --bg: #f4f5f6;
   --surface: #ffffff;
-  --surface-soft: #fafbfe;
-  --surface-hover: #f4f5f9;
-  --text: #20212c;
-  --text-strong: #171822;
-  --muted: #777b8c;
-  --muted-2: #9da1af;
-  --border: #e8e9ef;
-  --border-strong: #dcdde6;
-  --accent: #7053d6;
-  --accent-hover: #5f42c7;
-  --accent-soft: #f0ecff;
-  --accent-border: #dfd7ff;
-  --green: #218567;
-  --green-soft: #e9f6f1;
-  --blue: #467bc8;
-  --blue-soft: #edf4ff;
-  --amber: #b17925;
-  --amber-soft: #fff5e3;
-  --red: #bd4c55;
-  --red-soft: #fff0f0;
-  --shadow-sm: 0 1px 2px rgba(23, 24, 34, .04), 0 3px 10px rgba(23, 24, 34, .025);
-  --shadow-md: 0 14px 50px rgba(25, 26, 39, .17);
-  --auth-hero-bg: #efedf7;
-  --auth-hero-text: #272338;
-  --auth-hero-muted: #625e72;
-  --auth-hero-subtle: #797487;
-  --auth-hero-accent: #6349b6;
-  --auth-hero-border: rgba(91, 73, 150, .2);
-  --auth-hero-glow: rgba(119, 91, 220, .12);
+  --surface-soft: #f1f2f3;
+  --surface-hover: #e8eaec;
+  --text: #4d5155;
+  --text-strong: #25282b;
+  --muted: #6f7478;
+  --muted-2: #8b9094;
+  --border: #e1e3e5;
+  --border-strong: #cdd0d2;
+  --accent: #2f6fe6;
+  --accent-hover: #2159c9;
+  --accent-soft: #ebf2ff;
+  --accent-border: #bfd2fd;
+  --green: #27834e;
+  --green-soft: #e2f3e8;
+  --blue: #008f87;
+  --blue-soft: #ddf3ef;
+  --indigo: #6557c8;
+  --amber: #b8790d;
+  --amber-soft: #fff1d6;
+  --red: #2f6fe6;
+  --red-soft: #ebf2ff;
+  --auth-hero-bg: #eff0f1;
+  --auth-hero-text: #252a30;
+  --auth-hero-muted: #525c66;
+  --auth-hero-subtle: #68737d;
+  --auth-hero-accent: #2f6fe6;
+  --auth-hero-border: #cbd0d5;
   color: var(--text);
   background: var(--bg);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #111116;
-  --surface: #19191f;
-  --surface-soft: #1d1d24;
-  --surface-hover: #25252d;
-  --text: #d5d5df;
-  --text-strong: #f1f0f7;
-  --muted: #a0a0ae;
-  --muted-2: #777786;
-  --border: #2c2c35;
-  --border-strong: #3a3a45;
-  --accent: #9b84f0;
-  --accent-hover: #ad9bfa;
-  --accent-soft: #29233d;
-  --accent-border: #45386a;
-  --green: #64c5a5;
-  --green-soft: #1b302b;
-  --blue: #83a9ec;
-  --blue-soft: #202b3d;
-  --amber: #e4b762;
-  --amber-soft: #342b1c;
-  --red: #ed8a91;
-  --red-soft: #382326;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .12), 0 4px 18px rgba(0, 0, 0, .09);
-  --shadow-md: 0 14px 50px rgba(0, 0, 0, .45);
-  --auth-hero-bg: #191724;
-  --auth-hero-text: #ffffff;
-  --auth-hero-muted: #b3b0c1;
-  --auth-hero-subtle: #aaa7ba;
-  --auth-hero-accent: #b6a6ff;
-  --auth-hero-border: rgba(158, 138, 236, .22);
-  --auth-hero-glow: rgba(119, 91, 220, .28);
+  --bg: #1d1e20;
+  --surface: #252628;
+  --surface-soft: #2d2f31;
+  --surface-hover: #393b3e;
+  --text: #dcddde;
+  --text-strong: #f2f2f1;
+  --muted: #afb1b3;
+  --muted-2: #8e9194;
+  --border: #3b3d40;
+  --border-strong: #55585b;
+  --accent: #ff6f78;
+  --accent-hover: #ff9097;
+  --accent-soft: #47272c;
+  --accent-border: #754149;
+  --green: #72d99a;
+  --green-soft: #203d30;
+  --blue: #56d6c7;
+  --blue-soft: #1d403d;
+  --indigo: #a79bff;
+  --amber: #ffca69;
+  --amber-soft: #403522;
+  --red: #e39a9e;
+  --red-soft: #432f31;
+  --auth-hero-bg: #202123;
+  --auth-hero-text: #f2f2f1;
+  --auth-hero-muted: #c1c2c3;
+  --auth-hero-subtle: #a0a2a4;
+  --auth-hero-accent: #ff9892;
+  --auth-hero-border: #45474a;
 }
 
 * { box-sizing: border-box; }
@@ -86,7 +83,7 @@
 
 *::-webkit-scrollbar { width: 9px; height: 9px; }
 *::-webkit-scrollbar-track { background: transparent; }
-*::-webkit-scrollbar-thumb { border: 2px solid transparent; border-radius: 99px; background: color-mix(in srgb, var(--muted-2) 55%, transparent); background-clip: padding-box; }
+*::-webkit-scrollbar-thumb { border: 2px solid transparent; border-radius: 2px; background: color-mix(in srgb, var(--muted-2) 55%, transparent); background-clip: padding-box; }
 *::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--muted) 72%, transparent); background-clip: padding-box; }
 *::-webkit-scrollbar-corner { background: transparent; }
 
@@ -95,7 +92,7 @@ body {
   min-width: 360px;
   min-height: 100vh;
   color: var(--text);
-  background: var(--bg);
+  background: var(--page-background, var(--bg));
   font-size: 14px;
   line-height: 1.5;
   transition: color .18s ease, background-color .18s ease;

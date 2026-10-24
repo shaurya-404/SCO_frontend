@@ -68,7 +68,7 @@ export function DashboardPage({ userName }: { userName: string }) {
                   </div>
                   <div className="panel-foot"><Link to="/recommendations">Review all recommendations <Icon name="chevron" size={14} /></Link></div>
                 </>
-              ) : <EmptyState title="You’re all caught up" message="There are no pending recommendations right now." icon="check" />}
+              ) : <EmptyState title="You’re all caught up" message="There are no pending recommendations right now." icon="overview" />}
             </Panel>
             <Panel title="Spend trajectory" subtitle="Forecast based on current monthly spend">
               <div className="trajectory-current"><span>Current monthly spend</span><strong>{formatCurrency(forecast.current_monthly_spend)}</strong></div>
@@ -76,10 +76,10 @@ export function DashboardPage({ userName }: { userName: string }) {
                 {[forecast.current_monthly_spend, forecast.forecast_30_days, forecast.forecast_60_days, forecast.forecast_90_days].map((value, index) => {
                   const values = [forecast.current_monthly_spend, forecast.forecast_30_days, forecast.forecast_60_days, forecast.forecast_90_days]
                   const max = Math.max(...values, 1)
-                  return <div className="trajectory-column" key={index}><span className="trajectory-value">{formatCurrency(value, true)}</span><i style={{ height: `${Math.max((value / max) * 100, 18)}%` }} /><small>{index === 0 ? 'Now' : `${index * 30} days`}</small></div>
+                  return <div className={`trajectory-column ${index > 0 ? 'trajectory-column-forecast' : ''}`} key={index}><span className="trajectory-value">{formatCurrency(value, true)}</span><i style={{ height: `${Math.max((value / max) * 100, 18)}%` }} /><small>{index === 0 ? 'Now' : `${index * 30} days`}</small></div>
                 })}
               </div>
-              <div className="forecast-note"><span className="forecast-arrow">↗</span><span>Projected to increase by <strong>{trend.projected_growth_rate_pct}%</strong> over the next month.</span></div>
+              <div className="forecast-note"><span>Projected to increase by <strong>{trend.projected_growth_rate_pct}%</strong> over the next month.</span></div>
               <div className="panel-foot"><Link to="/forecast">Explore forecast <Icon name="chevron" size={14} /></Link></div>
             </Panel>
           </div>
@@ -104,7 +104,7 @@ export function DashboardPage({ userName }: { userName: string }) {
                     </div>
                   ))}
                 </div>
-              ) : <EmptyState title="No active alerts" message="We’ll show notable usage changes here." icon="check" />}
+              ) : <EmptyState title="No active alerts" message="We’ll show notable usage changes here." icon="overview" />}
               <div className="panel-foot"><Link to="/alerts">Go to alert center <Icon name="chevron" size={14} /></Link></div>
             </Panel>
           </div>

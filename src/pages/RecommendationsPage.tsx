@@ -60,7 +60,7 @@ export function RecommendationsPage() {
           <div className="recommendation-summary">
             <div><span>Potential monthly savings</span><strong>{formatCurrency(pendingSavings)}</strong><small>Across {pending.length} pending recommendations</small></div>
             <div><span>Awaiting review</span><strong>{pending.length}</strong><small>Applied or dismissed ideas are retained below</small></div>
-            <div className="recommendation-caveat"><Icon name="assistant" size={18} /><p>Resize advice should be checked against p95 and p99 usage—not averages alone. Apply changes through your normal rollout process.</p></div>
+            <div className="recommendation-caveat"><Icon name="assistant" size={18} /><p>Check resize advice against p95 and p99 usage, not averages alone. Apply changes through your normal rollout process.</p></div>
           </div>
           <Panel title="Optimization suggestions" subtitle="Individual savings are estimates at current pricing">
             {recommendations.length ? (

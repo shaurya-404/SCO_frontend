@@ -21,9 +21,8 @@ function AuthFrame({ children, mode }: { children: ReactNode; mode: 'login' | 'r
             <span className="auth-kicker"><Icon name="leaf" size={15} /> CLOUD COST INTELLIGENCE</span>
             <h1>Make every cloud resource count.</h1>
             <p>Turn utilization data into clear, safe decisions your team can stand behind.</p>
-            <div className="auth-aside-stats"><div><strong>30–90</strong><span>day cost outlook</span></div><i /><div><strong>p95 / p99</strong><span>peak-aware sizing</span></div></div>
+            <div className="auth-aside-stats"><div><strong>30 to 90</strong><span>day cost outlook</span></div><i /><div><strong>p95 / p99</strong><span>peak-aware sizing</span></div></div>
           </div>
-          <div className="auth-grid-decoration" aria-hidden="true" />
           <span className="auth-aside-foot">Built for teams that own their infrastructure.</span>
         </section>
         <section className="auth-card-wrap">
